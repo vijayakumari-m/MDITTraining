@@ -1,8 +1,9 @@
-
+//ShortCalc program
 public class ShortCalc {
 
 	public static void main(String[] args) {
 		
+		//Declare a Srting
 		String welcomemessage = "Welcome to my Short Calculator";
 		
 		int firstnumber = 10;
