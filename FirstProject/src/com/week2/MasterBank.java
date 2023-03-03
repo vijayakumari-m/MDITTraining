@@ -1,6 +1,6 @@
 package com.week2;
 
-public class MasterBank {
+class MasterBank {
 	
 	
 	int setInterestRate(int interestRate) {
