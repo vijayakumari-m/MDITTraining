@@ -1,6 +1,6 @@
 package com.week2;
 
-public class Dog extends Animal {
+class Dog extends Animal {
 	
 	public void bark() {
 		

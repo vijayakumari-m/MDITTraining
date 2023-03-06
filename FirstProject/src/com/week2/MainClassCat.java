@@ -8,7 +8,7 @@ public class MainClassCat {
 	public static void main(String[] args) {
 		
 		//Create instance for Cat class
-		Cat brownie = new Cat();
+		Cat brownie = new Cat(50,50,50);
 		
 		//Invoke all the methods
 		brownie.sleep();
@@ -17,9 +17,9 @@ public class MainClassCat {
 		brownie.digest();
 		
 		//Print the values
-		System.out.println("Energy : "+brownie.energyIndex);
-		System.out.println("Mood : "+brownie.moodIndex);
-		System.out.println("Hunger : "+brownie.hungerIndex);
+		System.out.println("Energy : "+brownie.getEnergyIndex());
+		System.out.println("Mood : "+brownie.getMoodIndex());
+		System.out.println("Hunger : "+brownie.getHungerIndex());
 
 		}
 

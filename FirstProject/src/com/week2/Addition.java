@@ -1,7 +1,7 @@
 package com.week2;
 
 //Week 2 - Program 6
-public class Addition {
+class Addition {
 	
 	static int result;
 	

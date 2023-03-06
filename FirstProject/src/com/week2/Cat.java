@@ -1,12 +1,32 @@
 package com.week2;
 
 //Week 2 - Program 1
- public class Cat {
+ class Cat {
 	 
 	 //Declare moodIndex, hungerIndex & energyIndex with value 50
-	int moodIndex = 50;
-	int hungerIndex = 50;
-	int energyIndex =50;
+	private int moodIndex;
+	private int hungerIndex;
+	private int energyIndex;
+	
+	public Cat(int moodIndex, int hungerIndex, int energyIndex) {
+		this.moodIndex = moodIndex;
+		this.hungerIndex = hungerIndex;
+		this.energyIndex = energyIndex;
+	}
+	
+	public int getMoodIndex() {
+		return moodIndex;
+	}
+
+	public int getHungerIndex() {
+		return hungerIndex;
+	}
+
+	public int getEnergyIndex() {
+		return energyIndex;
+	}
+
+	
 	
 	//Define an action sleep() and Increase energyIndex by 10
 	public void sleep() {
