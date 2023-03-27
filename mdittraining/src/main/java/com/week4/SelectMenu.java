@@ -3,10 +3,12 @@ package com.week4;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class SelectMenu {
@@ -30,34 +32,42 @@ public class SelectMenu {
 		WebElement demoFrame = driver.findElement(By.className("demo-frame"));
 		driver.switchTo().frame(demoFrame);
 			
-		//Select speed as Medium using index
+		//Select speed as Medium 
 		WebElement speed = driver.findElement(By.id("speed-button"));
 		speed.click();
-		WebElement speedOption = driver.findElement(By.xpath("//span[text()='Medium']"));
-		speedOption.click();
+		
+		//Implement Actions class to use mouse or keyboard actions
+		Actions act = new Actions(driver);
+		act.click(speed);
+		act.sendKeys(Keys.ARROW_DOWN).build().perform();
+		act.sendKeys(Keys.ARROW_UP).build().perform();
 
-		//Select speedSelect = new Select(speedOption);
-		//speedSelect.selectByIndex(1);
 		
-		//Select a title using Visible text
-		WebElement title = driver.findElement(By.id("salutation"));
 		
-		Select titleSelect = new Select(title);
-		titleSelect.selectByVisibleText("Mrs.");
+		//Select a title 
+		WebElement titlefield = driver.findElement(By.id("salutation-button"));
+		titlefield.click();
 		
-		//Select files using value
-		WebElement files = driver.findElement(By.id("files"));
 		
-		Select filesSelect = new Select(files);
-		filesSelect.selectByValue("ui.jQuery.js");
+		act.click(titlefield);
+		act.sendKeys(Keys.ARROW_DOWN).build().perform();
+		act.sendKeys(Keys.ARROW_DOWN).build().perform();
 		
-		//Select number using index
-		WebElement number = driver.findElement(By.id("number"));
+		//Select files 
+		WebElement files = driver.findElement(By.id("files-button"));
 		
-		Select numberSelect = new Select(number);
-		numberSelect.selectByIndex(3);
+		act.click(files);
+		act.sendKeys(Keys.ARROW_DOWN).build().perform();
 		
-		//driver.close();
+		//Select number 
+		WebElement number = driver.findElement(By.id("number-button"));
+		
+		act.click(number);
+		act.sendKeys(Keys.ARROW_DOWN).build().perform();
+		act.sendKeys(Keys.ARROW_DOWN).build().perform();
+		act.sendKeys(Keys.ARROW_DOWN).build().perform();
+		
+		driver.close();
 	
 	
 	}

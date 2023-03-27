@@ -27,12 +27,12 @@ public class FourWaits {
 		
 		// Get URL
 		driver.get("https://hms.techcanvass.co/");
-
+		driver.manage().window().maximize();
 		
 		//Implicit wait
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		
-		driver.manage().window().maximize();
+		
 		
 		//Inspect Login ID field
 		WebElement loginID = driver.findElement(By.id("txtUserName"));

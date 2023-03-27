@@ -31,7 +31,7 @@ public class RadioButtons {
 		Thread.sleep(2000);
 		mozillaRadioButton.click();
 		
-		//driver.close();
+		driver.close();
 
 	}
 

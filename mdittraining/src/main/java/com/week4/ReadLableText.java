@@ -24,10 +24,10 @@ public class ReadLableText {
 
 		driver.manage().window().maximize();
 		
-		
-		System.out.println(driver.getTitle());
-		
-		List<WebElement> checkBoxes = driver.findElements(By.xpath("//form[contains(text(),'favourite colors')]/input"));
+		WebElement allCheckBoxes = driver.findElement(By.xpath("//form[contains(text(),' favourite colors')]"));
+		System.out.println(allCheckBoxes.getText());
+		//List through all the check boxes	
+		/*List<WebElement> checkBoxes = driver.findElements(By.xpath("//form[contains(text(),'favourite colors')]/input"));
 		System.out.println("Number of Check Boxes: "+checkBoxes.size());
 	
 		
@@ -37,10 +37,22 @@ public class ReadLableText {
 			 
 			 System.out.println(checkBox.getAttribute("value"));
 
-		  }
+		  }*/
+		WebElement browsers = driver.findElement(By.xpath("//form[contains(text(),'current')]"));
+		System.out.println(browsers.getText());
+		
+		//List through all the radio buttons
+		/*List<WebElement> radioButtons = driver.findElements(By.xpath("//form[contains(text(),'current web browser')]/input"));
+		System.out.println("Number of Radio Buttons:  "+radioButtons.size());
+		
+		for (WebElement radioButton : radioButtons) {
+			
+			 System.out.println(radioButton.getText());
+			
+		}*/
 
 
-		//driver.close();
+		driver.close();
 
 	}
 
