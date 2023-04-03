@@ -24,35 +24,26 @@ public class DatePicker {
 
 		driver.manage().window().maximize();
 
-		// inspect the frame and switch to it
+		// locate the frame and elements
 		WebElement demoFrame = null;
 		WebElement dateField = null;
 		WebElement date = null;
 		
 		//try catch block to handle when the exception occurs
 		try {
+			
 			demoFrame = driver.findElement(By.className("demo-frame"));
-		}
-		catch (NoSuchElementException e) {
-			System.out.println(e);
-		}
-		driver.switchTo().frame(demoFrame);
-		
-		try {
+			driver.switchTo().frame(demoFrame);
 			dateField= driver.findElement(By.xpath("//input[@id='datepicker']"));
-		}
-		catch (NoSuchElementException e) {
-			System.out.println(e);
-		}
-		dateField.click();
-		
-		try {
+			dateField.click();
 			date= driver.findElement(By.xpath("//td/a[text()='8']"));
+			date.click();
 		}
+		
 		catch (NoSuchElementException e) {
+			
 			System.out.println(e);
 		}
-		date.click();
 		
 		
 		driver.quit();
