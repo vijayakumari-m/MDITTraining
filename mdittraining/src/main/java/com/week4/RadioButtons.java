@@ -1,5 +1,7 @@
 package com.week4;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -23,15 +25,19 @@ public class RadioButtons {
 
 		driver.manage().window().maximize();
 		
+		//Inspect the element to be selected
 		WebElement mozillaRadioButton = driver.findElement(By.xpath("//form[contains(text(),'current web browser')]/input[2]"));
 		
-		
+		//Scroll down to the specified element using JavascriptExecutor
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", mozillaRadioButton) ; 
 		Thread.sleep(2000);
+		
+		//click the specified option
 		mozillaRadioButton.click();
 		
-		driver.close();
+		
+		driver.quit();
 
 	}
 
