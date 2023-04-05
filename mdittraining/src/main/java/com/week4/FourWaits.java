@@ -29,7 +29,7 @@ public class FourWaits {
 		driver.get("https://hms.techcanvass.co/");
 		driver.manage().window().maximize();
 		
-		//Implicit wait
+		//Implicit wait - driver will wait for all the webelements to be load 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		
 		
@@ -38,16 +38,17 @@ public class FourWaits {
 		WebElement loginID = driver.findElement(By.id("txtUserName"));
 		loginID.sendKeys("Pradnya");
 		
+		//Thread.sleep - execution of the program will wait for specified time
 		Thread.sleep(3000);
 		//Inspect Password field
 		WebElement passWord = driver.findElement(By.id("txtPassword"));
 		passWord.sendKeys("1994");
 		
-		//Explicit wait
+		//Explicit wait - Make the driver wiat until the specified webelement is available
 		WebElement staySignin = new WebDriverWait(driver, Duration.ofSeconds(4)).until(ExpectedConditions.elementToBeClickable(By.id("chkstaysignedin")));
 		staySignin.click();
 				
-		//Fluent wait
+		//Fluent wait - make driver wait for specified time period with polling time
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 			       .withTimeout(Duration.ofSeconds(30L))
 			       .pollingEvery(Duration.ofSeconds(5L))
@@ -59,7 +60,10 @@ public class FourWaits {
 			     }
 			   });
 		 loginButton.click();
+		 driver.quit();
 
 	}
+	
+	
 
 }
